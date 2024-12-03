@@ -17,19 +17,6 @@ func sendCommand(socketKey string, command []byte, expectedResponse string) ([]b
 
 	// setLineDelimiter(defaultLineDelimiter) // Handled in microservice.go setFrameworkGlobals
 
-	/*
-	// First read past any pending output from the Shure (may need improvement if we start caring about unsolicited responses)
-	readPast := "start"
-	for len(readPast) != 0 {
-		readPast = tryReadLineFromSocket(socketKey)
-		if len(readPast) != 0 {
-			framework.Log(fmt.Sprintf(function + " - reading past pending data from Shure got: [%s]", readPast))
-			readPast = tryReadLineFromSocket(socketKey)
-		}
-	}
-	*/
-
-
 	// Write our command
 	line := string(command)
 	if !framework.WriteLineToSocket(socketKey, line) {
@@ -43,7 +30,15 @@ func sendCommand(socketKey string, command []byte, expectedResponse string) ([]b
 	// Check for and read any more responses (we'll use the last one that matches our expected response)
 	nextMsg := "start"
 	for len(nextMsg) != 0 {
+		keepMaxReadTries := framework.MaxReadTries
+		keepReadNoSleepTries := framework.ReadNoSleepTries
+		// Tell the framework to not retry much on this read because there probobably isn't anything 
+		// there to read anyway
+		framework.MaxReadTries = 1 
+		framework.ReadNoSleepTries = 1 
 		nextMsg = framework.ReadLineFromSocket(socketKey)
+		framework.MaxReadTries = keepMaxReadTries
+		framework.ReadNoSleepTries = keepReadNoSleepTries
 		framework.Log("vewada#@ Tried reading again, got: [" + nextMsg + "]")
 		if len(nextMsg) != 0 {
 			if strings.Contains(nextMsg, expectedResponse) { // a later response matches what we expected, so let's use it
@@ -54,6 +49,7 @@ func sendCommand(socketKey string, command []byte, expectedResponse string) ([]b
 			}
 		}
 	}
+	framework.Log("DONE reading again")
 	// msg = msg
 	if msg == "" { // No response
 		errMsg := function + " - asdfasf2323 error reading from " + socketKey 
