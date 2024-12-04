@@ -27,31 +27,24 @@ func sendCommand(socketKey string, command []byte, expectedResponse string) ([]b
 
 	// Now we need to read the response
 	msg := framework.ReadLineFromSocket(socketKey)
-	// Check for and read any more responses (we'll use the last one that matches our expected response)
-	nextMsg := "start"
-	for len(nextMsg) != 0 {
+	// Shure P300 may inject random responses, so we need to read past unwanted ones
+	// See if we got nothing or the expected response
+	for (len(msg) != 0) && (!strings.Contains(msg, expectedResponse)){
+		// We read something, but it's not what we seek, so try reading again
 		keepMaxReadTries := framework.MaxReadTries
 		keepReadNoSleepTries := framework.ReadNoSleepTries
-		// Tell the framework to not retry much on this read because there probobably isn't anything 
+		// Tell the framework to not retry much on this read because there probably isn't anything 
 		// there to read anyway
 		framework.MaxReadTries = 1 
 		framework.ReadNoSleepTries = 1 
-		nextMsg = framework.ReadLineFromSocket(socketKey)
+		msg = framework.ReadLineFromSocket(socketKey)
 		framework.MaxReadTries = keepMaxReadTries
 		framework.ReadNoSleepTries = keepReadNoSleepTries
-		framework.Log("vewada#@ Tried reading again, got: [" + nextMsg + "]")
-		if len(nextMsg) != 0 {
-			if strings.Contains(nextMsg, expectedResponse) { // a later response matches what we expected, so let's use it
-				// framework.Log("Got an expected response on a later read:" + nextMsg)
-				msg = nextMsg
-			} else {
-				// framework.Log(color.HiRedString("LLLLL Got an UNexpected response on a later read:" + nextMsg))
-			}
-		}
+		framework.Log("vewada#@ Tried reading again, got: [" + msg + "]")
 	}
 	framework.Log("DONE reading again")
 	// msg = msg
-	if msg == "" { // No response
+	if len(msg) == 0 { // No response
 		errMsg := function + " - asdfasf2323 error reading from " + socketKey 
 		framework.AddToErrors(socketKey, errMsg)
 		//closeSocketConnection(socketKey)
@@ -61,7 +54,7 @@ func sendCommand(socketKey string, command []byte, expectedResponse string) ([]b
 		if len(msg) > 3 {
 			// check for leading '<' - a sign of healthy communication
 			if msg[0] != '<' {
-				errMsg := function + " - error didn't find a < in response from " + socketKey
+				errMsg := function + " - jka9npe error didn't find a < in response from " + socketKey
 				framework.AddToErrors(socketKey, errMsg)
 				// return string(command), errors.New(errMsg)
 				return (command), errors.New(errMsg)
