@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "4ffade79-0200-47cf-98c7-c27902417b8f",
+		"name": "Shure DSP Microservice",
+		"description": "A collection of all possible GET and PUT calls for the Shure DSP microservice. You can replace the values in double curly brackets manually or create matching environment variables that will automatically fill in the values.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26997154"
+	},
+	"item": [
+		{
+			"name": "GET volume",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/volume/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"volume",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SET volume",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"75\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/volume/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"volume",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET audiomute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/audiomute/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"audiomute",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SET audiomute",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"true\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/audiomute/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"audiomute",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET matrixmute",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixmute/0/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"matrixmute",
+						"0",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SET matrixmute",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"true\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixmute/0/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"matrixmute",
+						"0",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET matrixvolume",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixvolume/0/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"matrixvolume",
+						"0",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SET matrixvolume",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"75\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixvolume/0/1",
+					"protocol": "http",
+					"host": [
+						"{{microserviceURL}}"
+					],
+					"path": [
+						"{{deviceFQDN}}",
+						"matrixvolume",
+						"0",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
