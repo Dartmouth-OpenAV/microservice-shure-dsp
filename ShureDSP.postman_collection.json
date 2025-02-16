@@ -13,7 +13,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/volume/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/volume/11",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -21,7 +21,7 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"volume",
-						"1"
+						"11"
 					]
 				}
 			},
@@ -34,7 +34,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\"75\"",
+					"raw": "\"35\"",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/volume/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/volume/11",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -50,7 +50,7 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"volume",
-						"1"
+						"11"
 					]
 				}
 			},
@@ -62,7 +62,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/audiomute/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/audiomute/11",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -70,7 +70,7 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"audiomute",
-						"1"
+						"11"
 					]
 				}
 			},
@@ -91,7 +91,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/audiomute/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/audiomute/11",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -99,7 +99,7 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"audiomute",
-						"1"
+						"11"
 					]
 				}
 			},
@@ -111,7 +111,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixmute/0/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixmute/01/17",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -119,8 +119,8 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"matrixmute",
-						"0",
-						"1"
+						"01",
+						"17"
 					]
 				}
 			},
@@ -141,7 +141,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixmute/0/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixmute/01/17",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -149,8 +149,8 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"matrixmute",
-						"0",
-						"1"
+						"01",
+						"17"
 					]
 				}
 			},
@@ -162,7 +162,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixvolume/0/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixvolume/01/17",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -170,8 +170,8 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"matrixvolume",
-						"0",
-						"1"
+						"01",
+						"17"
 					]
 				}
 			},
@@ -184,7 +184,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\"75\"",
+					"raw": "\"35\"",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -192,7 +192,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixvolume/0/1",
+					"raw": "http://{{microserviceURL}}/{{deviceFQDN}}/matrixvolume/01/17",
 					"protocol": "http",
 					"host": [
 						"{{microserviceURL}}"
@@ -200,8 +200,8 @@
 					"path": [
 						"{{deviceFQDN}}",
 						"matrixvolume",
-						"0",
-						"1"
+						"01",
+						"17"
 					]
 				}
 			},
