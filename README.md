@@ -8,6 +8,8 @@ The Shure DSP (Digital Signal Processor) is an audio processing unit designed to
 
 [Shure IntelliMix P300](https://www.shure.com/en-US/products/mixers/p300)
 
+[curl test documentation](https://github.com/Dartmouth-OpenAV/documentation/blob/main/curl_test_readme.md)
+
 ![](https://github.com/Dartmouth-OpenAV/microservice-shure-dsp/blob/main/front.png)
 
 ![](https://github.com/Dartmouth-OpenAV/microservice-shure-dsp/blob/main/rear.png)
