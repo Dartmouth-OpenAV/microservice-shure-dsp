@@ -444,3 +444,26 @@ func doShureCommand(socketKey string, commandStr []byte, expectedResponse string
 
 	return `"` + respVals[index] + `"`, nil
 }
+
+func getModel(socketKey string) (string, error) {
+	function := "getModel"
+	// Send the Shure get mute status command
+	expectedResponse := "MODEL" 
+	commandStr := []byte("< GET " + expectedResponse + " >")
+	resp, err := doShureCommand(socketKey, commandStr, expectedResponse, 3)
+	if err != nil {
+		errMsg := fmt.Sprintf(function+" - Error khT&k %v", err.Error())
+		framework.AddToErrors(socketKey, errMsg)
+		return resp, errors.New(errMsg)
+	}
+	return resp, nil
+}
+
+func healthCheck(socketKey string) (string, error) {
+	_, err := getModel(socketKey)
+	returnStr := `"true"`
+	if err != nil && strings.Contains(err.Error(), "Error sending command") {
+		returnStr = `"false"`
+	}
+	return returnStr, nil
+}
